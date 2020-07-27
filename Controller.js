@@ -12,6 +12,8 @@
 	
     window.onload = function () { 
       addIframe("SGLogin","https://slappdev.appspot.com/signin","auto","100%","100%","no");
+      addIframe("SGEvent","https://slappstg.appspot.com/campaigns?apiKey=AIzaSyDGmkUoLlk2oc1YWPpeTWlYuhIYX9bd1Lw&campaignType=event","auto","1350","540","yes");
+      addIframe("SGVolunteer","https://slappstg.appspot.com/campaigns?apiKey=AIzaSyDGmkUoLlk2oc1YWPpeTWlYuhIYX9bd1Lw&campaignType=volunteerCampaign","auto","1350","540","yes");	
     }
 	
 	window.onmessage = (event) => {
