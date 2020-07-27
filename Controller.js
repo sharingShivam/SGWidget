@@ -28,7 +28,7 @@
 			} else {
                 console.log("in successful login"+event.data +window.localStorage.getItem('sazenId') );
 				window.parent.postMessage(event.data,"*");
-				window.history.go(-1);
+				//window.history.go(-1);
 					}
 			}		
 		};
