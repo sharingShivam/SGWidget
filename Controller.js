@@ -1,4 +1,6 @@
-   function addIframe(id,url,overflow,width,height,scrolling) {
+  console.log("File Imported Sucessfully"); 
+
+  function addIframe(id,url,overflow,width,height,scrolling) {
       var element = document.getElementById(id);
       if (element != undefined ){
 	      var makeIframe = document.createElement("iframe");
