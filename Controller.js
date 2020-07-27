@@ -1,13 +1,15 @@
    function addIframe(id,url,overflow,width,height,scrolling) {
       var element = document.getElementById(id);
-      var makeIframe = document.createElement("iframe");
-      makeIframe.setAttribute("src", url);
-      makeIframe.setAttribute("overflow",overflow);
-      makeIframe.setAttribute( "width",width)
-      makeIframe.setAttribute( "height",height)
-      makeIframe.setAttribute("scrolling",scrolling)
-      makeIframe.setAttribute("frameBorder","0")
-      element.appendChild(makeIframe);
+      if (element != undefined ){
+	      var makeIframe = document.createElement("iframe");
+	      makeIframe.setAttribute("src", url);
+	      makeIframe.setAttribute("overflow",overflow);
+	      makeIframe.setAttribute( "width",width)
+	      makeIframe.setAttribute( "height",height)
+	      makeIframe.setAttribute("scrolling",scrolling)
+	      makeIframe.setAttribute("frameBorder","0")
+	      element.appendChild(makeIframe);
+      }
     }
 	
     window.onload = function () { 
