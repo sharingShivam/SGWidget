@@ -1,17 +1,17 @@
-   function addIframe() {
-      var element = document.getElementById("share");
+   function addIframe(id,url,overflow,width,height,scrolling) {
+      var element = document.getElementById(id);
       var makeIframe = document.createElement("iframe");
-      makeIframe.setAttribute("src", "https://slappdev.appspot.com/signin");
-      makeIframe.setAttribute("overflow","auto");
-      makeIframe.setAttribute( "width","100%")
-      makeIframe.setAttribute( "height","100%")
-      makeIframe.setAttribute("scrolling","no")
+      makeIframe.setAttribute("src", url);
+      makeIframe.setAttribute("overflow",overflow);
+      makeIframe.setAttribute( "width",width)
+      makeIframe.setAttribute( "height",height)
+      makeIframe.setAttribute("scrolling",scrolling)
       makeIframe.setAttribute("frameBorder","0")
       element.appendChild(makeIframe);
     }
-    
+	
     window.onload = function () { 
-      addIframe();
+      addIframe("SGLogin","https://slappdev.appspot.com/signin","auto","100%","100%","no");
     }
 	
 	window.onmessage = (event) => {
