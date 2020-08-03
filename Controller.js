@@ -31,7 +31,8 @@
           if(event.data.action=="redirect"){
               localStorage.setItem("redirectURL",event.data.url);
 	      console.log(window.location.href);
-              window.parent.location = window.location.href + "/registration"
+	      console.log(window.parent.location.href); 	  
+              //window.parent.location = window.location.href + "/registration"
           }
           if(event.data.action=="previous"){
                 window.history.go(-1);
