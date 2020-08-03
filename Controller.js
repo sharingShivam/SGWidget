@@ -19,18 +19,18 @@
     addIframe("SGLogin",serverhost + "signin","auto","100%","100%","no");
     addIframe("SGEvent",serverhost + "campaigns?apiKey=AIzaSyA3IgZ69XoXYURcy6Q6yWpzqMke_jMWUhg","auto","1350","540","yes");
     addIframe("SGVolunteer",serverhost +"campaigns?apiKey=AIzaSyDGmkUoLlk2oc1YWPpeTWlYuhIYX9bd1Lw&campaignType=volunteerCampaign","auto","1350","540","yes");
-      let redirectURL = sessionStorage.getItem("redirectURL");
+      let redirectURL = localStorage.getItem("redirectURL");
       if (redirectURL!= null){
 	addIframe("SGRegistration",serverhost +redirectURL,"auto","1350","540","yes");	
-	sessionStorage.removeItem("redirectURL");
+	//sessionStorage.removeItem("redirectURL");
 	}
     }
 	
   window.onmessage = (event) => {
       if (event.data) { 
           if(event.data.action=="redirect"){
-            sessionStorage.setItem("redirectURL",event.data.url);
-              window.parent.location = "https://vijayganapathi.wixsite.com/vijayaganapathi/registration"
+              localStorage.setItem("redirectURL",event.data.url);
+              window.parent.location = window.parent.location.href + "/registration"
           }
           if(event.data.action=="previous"){
                 window.history.go(-1);
