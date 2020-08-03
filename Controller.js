@@ -30,7 +30,7 @@
       if (event.data) { 
           if(event.data.action=="redirect"){
             sessionStorage.setItem("redirectURL",event.data.url);
-              window.location = "/registration"
+              window.location = "/vijayaganapathi/registration"
           }
           if(event.data.action=="previous"){
                 window.history.go(-1);
