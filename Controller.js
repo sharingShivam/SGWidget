@@ -17,18 +17,22 @@
     window.onload = function () { 
       addIframe("SGLogin","https://slappdev.appspot.com/signin","auto","100%","100%","no");
       addIframe("SGEvent","https://slappstg.appspot.com/campaigns?apiKey=AIzaSyDGmkUoLlk2oc1YWPpeTWlYuhIYX9bd1Lw&campaignType=event","auto","1350","540","yes");
-      addIframe("SGVolunteer","https://slappstg.appspot.com/campaigns?apiKey=AIzaSyDGmkUoLlk2oc1YWPpeTWlYuhIYX9bd1Lw&campaignType=volunteerCampaign","auto","1350","540","yes");	
+      addIframe("SGVolunteer","https://slappstg.appspot.com/campaigns?apiKey=AIzaSyDGmkUoLlk2oc1YWPpeTWlYuhIYX9bd1Lw&campaignType=volunteerCampaign","auto","1350","540","yes");
+      let redirectURL = sessionStorage.getItem("redirectURL");
+      if (redirectURL!= null){
+	addIframe("SGRegistration",localhost +redirectURL,"auto","1350","540","yes");	
+	sessionStorage.removeItem("redirectURL");
+	}
     }
 	
-	window.onmessage = (event) => {
-		if (event.data) { 
-    		console.log("got message");			         
-			if(event.data.startsWith('ERROR:')){
-				alert(event.data);
-			} else {
-                console.log("in successful login"+event.data +window.localStorage.getItem('sazenId') );
-				window.parent.postMessage(event.data,"*");
-				//window.history.go(-1);
-					}
-			}		
-		};
+  window.onmessage = (event) => {
+      if (event.data) { 
+          if(event.data.action=="redirect"){
+            sessionStorage.setItem("redirectURL",event.data.url);
+              window.location = "index2.html"
+          }
+          if(event.data.action=="previous"){
+                window.history.go(-1);
+          }
+        }	
+      };
