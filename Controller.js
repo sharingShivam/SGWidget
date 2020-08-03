@@ -15,12 +15,13 @@
     }
 	
     window.onload = function () { 
-      addIframe("SGLogin","https://slappdev.appspot.com/signin","auto","100%","100%","no");
-      addIframe("SGEvent","https://slappstg.appspot.com/campaigns?apiKey=AIzaSyDGmkUoLlk2oc1YWPpeTWlYuhIYX9bd1Lw&campaignType=event","auto","1350","540","yes");
-      addIframe("SGVolunteer","https://slappstg.appspot.com/campaigns?apiKey=AIzaSyDGmkUoLlk2oc1YWPpeTWlYuhIYX9bd1Lw&campaignType=volunteerCampaign","auto","1350","540","yes");
+    serverhost = "https://slappdev.appspot.com/"
+    addIframe("SGLogin",serverhost + "signin","auto","100%","100%","no");
+    addIframe("SGEvent",serverhost + "campaigns?apiKey=AIzaSyA3IgZ69XoXYURcy6Q6yWpzqMke_jMWUhg","auto","1350","540","yes");
+    addIframe("SGVolunteer",serverhost +"campaigns?apiKey=AIzaSyDGmkUoLlk2oc1YWPpeTWlYuhIYX9bd1Lw&campaignType=volunteerCampaign","auto","1350","540","yes");
       let redirectURL = sessionStorage.getItem("redirectURL");
       if (redirectURL!= null){
-	addIframe("SGRegistration",localhost +redirectURL,"auto","1350","540","yes");	
+	addIframe("SGRegistration",serverhost +redirectURL,"auto","1350","540","yes");	
 	sessionStorage.removeItem("redirectURL");
 	}
     }
