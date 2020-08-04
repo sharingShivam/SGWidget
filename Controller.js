@@ -30,9 +30,7 @@
       if (event.data) { 
           if(event.data.action=="redirect"){
               localStorage.setItem("redirectURL",event.data.url);
-	      console.log(window.location.href);
-	      console.log(window.top.location.href); 	  
-              //window.parent.location = window.location.href + "/registration"
+	      window.parent.location = "https://vijayganapathi.wixsite.com/vijayaganapathi/registration";
           }
           if(event.data.action=="previous"){
                 window.history.go(-1);
